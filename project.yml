@@ -1,0 +1,32 @@
+name: iosTodoApp
+options:
+  minimumXcodeGenVersion: 2.38.0
+settings:
+  base:
+    PRODUCT_BUNDLE_IDENTIFIER: com.benz.iosTodoApp
+    IPHONEOS_DEPLOYMENT_TARGET: 17.0
+targets:
+  iosTodoApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: iosTodoApp
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: UIInterfaceOrientationPortrait
+  iosTodoAppTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: iosTodoAppTests
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+    dependencies:
+      - target: iosTodoApp
